@@ -83,7 +83,7 @@ impl routing::node_interface::Interface for VaultFacade {
         }
     }
 
-    fn handle_post(&mut self, our_authority: Authority, from_authority: Authority, from_address: NameType, data: Vec<u8>)->Result<Action, RoutingError> {
+    fn handle_post(&mut self, our_authority: Authority, from_authority: Authority, from_address: NameType, name : NameType,  data: Vec<u8>)->Result<Action, RoutingError> {
         ;
         Err(RoutingError::InvalidRequest)
     }
@@ -369,7 +369,7 @@ impl VaultFacade {
     //        for i in 10..30 {
     //            close_group.push(available_nodes[i].clone());
     //        }
-    //        
+    //
     //        let churn_data = vault.handle_churn(close_group);
     //        assert_eq!(churn_data.len(), 1);
     //        assert!(churn_data[0].name() == data.name().clone());
